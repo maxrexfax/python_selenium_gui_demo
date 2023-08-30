@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTING REPORT FILE</title>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '.accordion-header', function(e) {
+                if(!$(this).next().is(":visible")){
+                    $(this).next().slideDown(500);
+                } else {
+                    $(this).next().slideUp(500);
+                }
+            });
+        });
+    </script>
+    <style>
+        .main-container {
+            max-width: 1000px;
+            min-width: 600px;
+            width: 100%;
+            margin: 10px auto;
+            padding: 20px;
+        }
+        .header-check {
+            background-color: rgb(236, 248, 126);
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .success-check {
+            background-color: rgb(182, 240, 124);
+            margin: 5px 0;
+        }
+        .error-check {
+            background-color: rgb(241, 156, 173);
+            margin: 5px 0;
+        }
+        .info-message {
+            background-color: rgb(222, 238, 184);
+            margin: 5px 0;
+        }
+        div {
+            padding: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<div style="text-align:right; font-size:2em; color:gray;">Test started at 2023-08-30 18:16:51</div><div class="main-container">
+	<div class="accordion-header">
+		<h2 class="header-check">Search test starts at 2023-08-30 18:16:52</h2>
+	</div>
+	<div class="accordion-content">
+		<div class="info-message">Testing of duckduckgo search starts</div>
+		<div class="info-message">Going to check if I'm on url:"https://duckduckgo.com/"</div>
+		<div class="success-check">I'm on page:"https://duckduckgo.com/" success</div>
+		<div class="info-message">Going to find:"Search input"</div>
+		<div class="success-check">Found Element:"Search input" success!</div>
+		<div class="info-message">Going to fill element:"Input for search" with text:"Buy icecream"</div>
+		<div class="success-check">Data filled successfully!</div>
+		<div class="info-message">Going to find:"Search form"</div>
+		<div class="success-check">Found Element:"Search form" success!</div>
+		<div class="info-message">Going to find:"Search button"</div>
+		<div class="success-check">Found Element:"Search button" success!</div>
+		<div class="info-message">Going to click element:"Start search button"</div>
+		<div class="success-check">Element:"Start search button" click success!</div>
+<p id='MARKER__CONTENT' style='display:none'>0</p>
+	</div>
+<p id='MARKER__HEADER' style='display:none'></p>
+</div>
+</body>
+</html>

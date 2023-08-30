@@ -1,0 +1,5 @@
+/.idea
+/logs
+/venv
+/report/old
+tests.py

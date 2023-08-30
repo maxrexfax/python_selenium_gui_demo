@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TESTING REPORT FILE</title>
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '.accordion-header', function(e) {
+                if(!$(this).next().is(":visible")){
+                    $(this).next().slideDown(500);
+                } else {
+                    $(this).next().slideUp(500);
+                }
+            });
+        });
+    </script>
+    <style>
+        .main-container {
+            max-width: 1000px;
+            min-width: 600px;
+            width: 100%;
+            margin: 10px auto;
+            padding: 20px;
+        }
+        .header-check {
+            background-color: rgb(236, 248, 126);
+            font-weight: bold;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .success-check {
+            background-color: rgb(182, 240, 124);
+            margin: 5px 0;
+        }
+        .error-check {
+            background-color: rgb(241, 156, 173);
+            margin: 5px 0;
+        }
+        .info-message {
+            background-color: rgb(222, 238, 184);
+            margin: 5px 0;
+        }
+        div {
+            padding: 10px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<div class="main-container">
+
+</div>
+</body>
+</html>
