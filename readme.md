@@ -27,3 +27,6 @@
 ### Install Tkinter from installer
 ### After installing run tests
 ```C:\Soft\Python\Python.exe main.py```
+
+## This project can start Chromium browser and search filled text.
+## Results/steps/errors saved to report.html file.
