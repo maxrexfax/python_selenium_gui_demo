@@ -16,33 +16,35 @@ def search_test(driver, url, text_to_search):
                                                       'searchbox_input',
                                                       'ID',
                                                       'Search input')
-    if input_for_search is not None:
-        fill_result = rp.fill_input_and_report(driver, input_for_search, text_to_search, 'Input for search')
-    else:
+    if input_for_search is None:
         rp.write_error_message(
-            'Cannot continue step get "Fill Search input" - element not found - stop test')
+            'Stop test on step "Find Search input" - element not found')
+        return
+    fill_result = rp.fill_input_and_report(driver, input_for_search, text_to_search, 'Input for search')
+
+    if fill_result is False:
+        rp.write_error_message('Stop test on step "Fill search FORM"')
         return
 
-    if fill_result is True:
-        form = rp.find_element_and_report(driver, driver,
-                                                      'searchbox_homepage',
-                                                      'ID',
-                                                      'Search form')
-    else:
-        rp.write_error_message('Cannot continue step "Find search FORM" - Filling input failed - stop test')
+    form = rp.find_element_and_report(driver, driver,
+                                                  'searchbox_homepage',
+                                                  'ID',
+                                                  'Search form')
+    if form is None:
+        rp.write_error_message('Stop test on step "Find form" - element not found')
         return
 
-    if form is not None:
-        button_search = rp.find_element_and_report(driver, form,
-                                                      '//button[@type="submit"]',
-                                                      'XPATH',
-                                                      'Search button')
-    else:
-        rp.write_error_message('Cannot continue step "Find search button" - FORM NOT FOUND - stop test')
-        return
-    if button_search is not None:
-        rp.click_and_report(driver, button_search, 'Search button')
-    else:
-        rp.write_error_message('Cannot continue step "Click search button" - BUTTON NOT FOUND - stop test')
+    button_search = rp.find_element_and_report(driver, form,
+                                               '//button[@type="submit"]',
+                                               'XPATH',
+                                               'Search button')
+
+    if button_search is None:
+        rp.write_error_message('Stop test on step "Find search button" - element not found')
         return
 
+    click_result = rp.click_and_report(driver, button_search, 'Search button')
+
+    if click_result is False:
+        rp.write_error_message('Stop test on step "Click search button"')
+        return
